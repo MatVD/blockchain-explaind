@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Blockchain Simplifié</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background: #f0f2f5;
+        padding: 20px;
+      }
+
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .header {
+        background: #3498db;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        border-radius: 10px 10px 0 0;
+      }
+
+      .header h1 {
+        font-size: 1.8em;
+        margin-bottom: 10px;
+      }
+
+      .blockchain-visual {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 15px 0;
+        gap: 8px;
+      }
+
+      .block {
+        width: 60px;
+        height: 40px;
+        background: #2980b9;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 10px;
+        font-weight: bold;
+      }
+
+      .chain {
+        width: 15px;
+        height: 3px;
+        background: #34495e;
+        border-radius: 2px;
+      }
+
+      .quiz-content {
+        padding: 30px;
+      }
+
+      .question {
+        background: #f8f9fa;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-left: 4px solid #3498db;
+      }
+
+      .question h3 {
+        color: #2c3e50;
+        margin-bottom: 15px;
+        font-size: 1.1em;
+      }
+
+      .options {
+        list-style: none;
+      }
+
+      .options li {
+        margin-bottom: 8px;
+      }
+
+      .options label {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        background: white;
+        border-radius: 6px;
+        cursor: pointer;
+        border: 1px solid #ddd;
+        transition: background-color 0.2s;
+      }
+
+      .options label:hover {
+        background: #e3f2fd;
+      }
+
+      .options input[type="radio"] {
+        margin-right: 10px;
+      }
+
+      .submit-btn {
+        background: #27ae60;
+        color: white;
+        border: none;
+        padding: 12px 30px;
+        border-radius: 6px;
+        font-size: 1em;
+        cursor: pointer;
+        display: block;
+        margin: 20px auto;
+      }
+
+      .submit-btn:hover {
+        background: #2ecc71;
+      }
+
+      .result {
+        display: none;
+        text-align: center;
+        padding: 15px;
+        margin-top: 15px;
+        border-radius: 6px;
+        font-weight: bold;
+      }
+
+      .result.success {
+        background: #d4edda;
+        color: #155724;
+      }
+
+      .result.error {
+        background: #f8d7da;
+        color: #721c24;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>🔗 Quiz Blockchain</h1>
+        <div class="blockchain-visual">
+          <div class="block">Bloc 1</div>
+          <div class="chain"></div>
+          <div class="block">Bloc 2</div>
+          <div class="chain"></div>
+          <div class="block">Bloc 3</div>
+        </div>
+        <p>3 questions simples sur Bitcoin et la blockchain</p>
+      </div>
+
+      <div class="quiz-content">
+        <form id="quizForm">
+          <div class="question">
+            <h3>
+              1. Pourquoi Bitcoin est-il considéré comme une réserve de valeur ?
+            </h3>
+            <ul class="options">
+              <li>
+                <label
+                  ><input type="radio" name="q1" value="a" /> Il est contrôlé
+                  par les banques</label
+                >
+              </li>
+              <li>
+                <label
+                  ><input type="radio" name="q1" value="b" /> Son effet de rareté (21 millions de BTC)</label
+                >
+              </li>
+              <li>
+                <label
+                  ><input type="radio" name="q1" value="c" /> Il est très
+                  rapide</label
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="question">
+            <h3>2. Que signifie "décentralisé" pour Bitcoin ?</h3>
+            <ul class="options">
+              <li>
+                <label
+                  ><input type="radio" name="q2" value="a" /> Il n'y a pas
+                  d'autorité centrale</label
+                >
+              </li>
+              <li>
+                <label
+                  ><input type="radio" name="q2" value="b" /> Il est géré par
+                  plusieurs banques</label
+                >
+              </li>
+              <li>
+                <label
+                  ><input type="radio" name="q2" value="c" /> Il fonctionne
+                  seulement la nuit</label
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="question">
+            <h3>3. Qu'est-ce qui rend la blockchain sécurisée ?</h3>
+            <ul class="options">
+              <li>
+                <label
+                  ><input type="radio" name="q3" value="a" /> Les mots de
+                  passe</label
+                >
+              </li>
+              <li>
+                <label
+                  ><input type="radio" name="q3" value="b" /> La cryptographie
+                  et la transparence</label
+                >
+              </li>
+              <li>
+                <label
+                  ><input type="radio" name="q3" value="c" /> Les
+                  antivirus</label
+                >
+              </li>
+            </ul>
+          </div>
+
+          <button type="submit" class="submit-btn">Voir mon score</button>
+        </form>
+
+        <div id="result" class="result"></div>
+      </div>
+    </div>
+
+    <script>
+      document
+        .getElementById("quizForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const answers = { q1: "b", q2: "a", q3: "b" };
+          let score = 0;
+
+          for (let question in answers) {
+            const selected = document.querySelector(
+              `input[name="${question}"]:checked`
+            );
+            if (selected && selected.value === answers[question]) {
+              score++;
+            }
+          }
+
+          const resultDiv = document.getElementById("result");
+          resultDiv.style.display = "block";
+
+          if (score === 3) {
+            resultDiv.className = "result success";
+            resultDiv.innerHTML =
+              "🎉 Parfait ! 3/3 - Vous maîtrisez les bases !";
+          } else if (score === 2) {
+            resultDiv.className = "result success";
+            resultDiv.innerHTML = "👍 Très bien ! 2/3 - Presque parfait !";
+          } else {
+            resultDiv.className = "result error";
+            resultDiv.innerHTML =
+              "📚 À revoir ! " + score + "/3 - Relisez les concepts de base.";
+          }
+        });
+    </script>
+  </body>
+</html>
